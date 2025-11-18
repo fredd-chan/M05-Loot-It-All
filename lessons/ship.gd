@@ -4,7 +4,19 @@ extends Area2D
 var max_speed := 1200.0
 var velocity := Vector2(0, 0)
 var steering_factor := 3.0
+var health := 10
 
+ #updates the health variable
+func set_health(new_health: int) -> void: 
+	health = new_health
+	#connects the health bar to the health value
+	get_node("UI/Healthbar").value = health 
+#connects when the ship enters the healthpack and tells the other func to update
+func _ready() -> void:
+	area_entered.connect(_on_area_entered)
+#When the ship enters the health pack, it updates the health
+func _on_area_entered(area_that_entered: Area2D) -> void:
+	set_health(health + 10)
 
 func _process(delta: float) -> void:
 	var direction := Vector2(0, 0)

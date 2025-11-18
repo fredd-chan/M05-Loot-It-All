@@ -51,5 +51,5 @@ offset_top = -64.0
 offset_right = 60.0
 offset_bottom = -51.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_5xifn")
-value = 100.0
+value = 10.0
 show_percentage = false
