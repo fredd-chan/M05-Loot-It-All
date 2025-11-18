@@ -20,4 +20,6 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 	if velocity.length() > 0.0:
-		rotation = velocity.angle()
+		get_node("Ship").rotation = velocity.angle() 
+		#This makes it so only the ship sprite node would
+		#rotate and not anything else
