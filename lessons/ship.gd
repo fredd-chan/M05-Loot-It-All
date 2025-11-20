@@ -5,6 +5,11 @@ var max_speed := 1200.0
 var velocity := Vector2(0, 0)
 var steering_factor := 3.0
 var health := 10
+var gem_count := 0
+
+func set_gem_count(new_gem_count: int) -> void:
+	gem_count = new_gem_count
+	get_node("UI/GemCount").text = "x" + str(gem_count)
 
  #updates the health variable
 func set_health(new_health: int) -> void: 
@@ -16,7 +21,10 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 #When the ship enters the health pack, it updates the health
 func _on_area_entered(area_that_entered: Area2D) -> void:
-	set_health(health + 10)
+	if area_that_entered.is_in_group("gem"):
+		set_gem_count(gem_count + 1)
+	elif area_that_entered.is_in_group("healing_item"):
+		set_health(health + 10)
 
 func _process(delta: float) -> void:
 	var direction := Vector2(0, 0)
