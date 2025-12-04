@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://btkjymc78ap8d"]
+[gd_scene load_steps=6 format=3 uid="uid://btkjymc78ap8d"]
 
+[ext_resource type="PackedScene" uid="uid://0uu76vxlq51l" path="res://lessons/random_item_placer.tscn" id="1_dru4e"]
 [ext_resource type="PackedScene" uid="uid://dmv50krf4bo5r" path="res://lessons/ship.tscn" id="2_2j1u5"]
 [ext_resource type="PackedScene" uid="uid://bxfevggvxo634" path="res://assets/background/space_background.tscn" id="3_e6xy1"]
 [ext_resource type="PackedScene" uid="uid://o1ca06m0k4bk" path="res://lessons/health_pack.tscn" id="3_etm7e"]
 [ext_resource type="PackedScene" uid="uid://bahukwqa7tdmd" path="res://lessons/Gems.tscn" id="4_4rc43"]
 
 [node name="Level" type="Node2D"]
+
+[node name="RandomItemPlacer" parent="." instance=ExtResource("1_dru4e")]
 
 [node name="Ship" parent="." instance=ExtResource("2_2j1u5")]
 position = Vector2(946, 546)
