@@ -9,6 +9,7 @@
 [node name="Level" type="Node2D"]
 
 [node name="RandomItemPlacer" parent="." instance=ExtResource("1_dru4e")]
+visible = false
 
 [node name="Ship" parent="." instance=ExtResource("2_2j1u5")]
 position = Vector2(946, 546)
@@ -28,7 +29,7 @@ position = Vector2(1590, 850)
 position = Vector2(549, 902)
 
 [node name="HealthPack5" parent="." instance=ExtResource("4_4rc43")]
-position = Vector2(761, 223)
+position = Vector2(437, 394)
 
 [node name="HealthPack6" parent="." instance=ExtResource("4_4rc43")]
 position = Vector2(1228, 805)
