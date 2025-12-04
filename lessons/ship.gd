@@ -43,3 +43,7 @@ func _process(delta: float) -> void:
 		get_node("Ship").rotation = velocity.angle() 
 		#This makes it so only the ship sprite node would
 		#rotate and not anything else
+	var viewport_size := get_viewport_rect().size
+	#Use this for boundaries around the screen
+	position.x = wrapf(position.x, 0, viewport_size.x)
+	position.y = wrapf(position.y, 0, viewport_size.y)
