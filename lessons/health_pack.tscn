@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://o1ca06m0k4bk"]
+[gd_scene load_steps=5 format=3 uid="uid://o1ca06m0k4bk"]
 
 [ext_resource type="Script" uid="uid://24ln0ahcx7f8" path="res://lessons/item.gd" id="1_ht84s"]
 [ext_resource type="Texture2D" uid="uid://dknpi2mq4dhpa" path="res://assets/health_icon.svg" id="2_fh62r"]
+[ext_resource type="AudioStream" uid="uid://dokghrwfh14l2" path="res://Audio/health.ogg" id="3_fh62r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nak5q"]
 radius = 24.33105
@@ -15,5 +16,8 @@ texture = ExtResource("2_fh62r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nak5q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fh62r")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmv50krf4bo5r"]
+[gd_scene load_steps=10 format=3 uid="uid://dmv50krf4bo5r"]
 
+[ext_resource type="AudioStream" uid="uid://dehcgqewxndsq" path="res://Audio/thruster.ogg" id="2_2s445"]
 [ext_resource type="Texture2D" uid="uid://bniyrxn3r2v8h" path="res://assets/ship.png" id="3_pdppw"]
 [ext_resource type="Script" uid="uid://bwkr2t4ku15qq" path="res://lessons/ship.gd" id="4_p1sls"]
 [ext_resource type="Texture2D" uid="uid://d0bh8am2qd005" path="res://assets/gem_icon.png" id="5_h3paj"]
@@ -74,3 +75,6 @@ offset_right = 48.0
 offset_bottom = -66.0
 text = "x0"
 label_settings = SubResource("LabelSettings_h3paj")
+
+[node name="ThrusterSoundPlayer" type="AudioStreamPlayer" parent="." groups=["player"]]
+stream = ExtResource("2_2s445")
