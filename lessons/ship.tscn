@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dmv50krf4bo5r"]
+[gd_scene load_steps=11 format=3 uid="uid://dmv50krf4bo5r"]
 
 [ext_resource type="AudioStream" uid="uid://dehcgqewxndsq" path="res://Audio/thruster.ogg" id="2_2s445"]
 [ext_resource type="Texture2D" uid="uid://bniyrxn3r2v8h" path="res://assets/ship.png" id="3_pdppw"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d0bh8am2qd005" path="res://assets/gem_icon.png" id="5_h3paj"]
 [ext_resource type="PackedScene" uid="uid://dgf54k70yiiff" path="res://assets/ship_visual_effects/main_thruster/main_thruster.tscn" id="5_q7c3l"]
 [ext_resource type="PackedScene" uid="uid://bklom8bhpxg4h" path="res://assets/ship_visual_effects/side_thruster/side_thruster.tscn" id="6_1updt"]
+[ext_resource type="AudioStream" uid="uid://ettv06gea16j" path="res://Audio/Health_Level_up.ogg" id="7_dwuaj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5xifn"]
 radius = 39.0
@@ -22,7 +23,7 @@ font_size = 20
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Ship" type="Area2D"]
+[node name="Ship" type="Area2D" groups=["player"]]
 collision_mask = 2
 script = ExtResource("4_p1sls")
 
@@ -78,3 +79,6 @@ label_settings = SubResource("LabelSettings_h3paj")
 
 [node name="ThrusterSoundPlayer" type="AudioStreamPlayer" parent="." groups=["player"]]
 stream = ExtResource("2_2s445")
+
+[node name="PowerupSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_dwuaj")

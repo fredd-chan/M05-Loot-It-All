@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var thruster_sound_player : AudioStreamPlayer = $ThrusterSoundPlayer
+@onready var powerup_sound_player : AudioStreamPlayer = $PowerupSoundPlayer
 var max_speed := 1200.0
 var velocity := Vector2(0, 0)
 var steering_factor := 3.0
@@ -10,6 +11,9 @@ var gem_count := 0
 func set_gem_count(new_gem_count: int) -> void:
 	gem_count = new_gem_count
 	get_node("UI/GemCount").text = "x" + str(gem_count)
+	if gem_count > 0 and gem_count % 10 == 0:
+		powerup_sound_player.stream = preload("res://Audio/Health_Level_up.ogg")
+		powerup_sound_player.play()
 
  #updates the health variable
 func set_health(new_health: int) -> void: 
